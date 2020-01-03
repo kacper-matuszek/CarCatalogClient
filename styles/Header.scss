@@ -1,0 +1,12 @@
+@import "../theme/theme";
+
+.Header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    color: $on-secondary;
+    background: $highlight;
+    font-family: $logo-font;
+}
