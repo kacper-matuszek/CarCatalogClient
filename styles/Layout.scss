@@ -1,22 +1,22 @@
 @import "../theme/theme";
 
 .Layout{
-    flex: 1;
     display: flex;
     flex-direction: column;
-    height: 100%;
+    align-items: center;
+    height: 100vh;
     width: 100%;
-
-    .Content{
-        flex: 1;
+    margin: 0;
+    font-family: $main-font; 
+    
+    > .BodySceleton
+    {
         display: flex;
-        flex-direction: column;
-        background: $secondary;
-        color: $on-secondary;
-        font-family: $core-font;
-
-        a{
-            color: inherit;
-        }
+        position: relative;
+        flex-flow: row;
+        justify-content:flex-start;
+        align-items: flex-start;
+        width: 80%;
+        margin: 60px auto;
     }
 }

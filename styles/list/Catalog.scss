@@ -1,0 +1,84 @@
+@import '../../theme/theme';
+
+.VerticalContent {
+    display: flex;
+    position: relative;
+    flex-flow: row wrap;
+    justify-content: center;
+    overflow-y: hidden;
+
+    > div {
+        margin: 10px;
+        padding: 5px;
+        background-color: #484848;
+        text-shadow: 1px 1px #000;
+
+      > a {
+            display: flex;
+            position: relative;
+            flex-direction: column;
+            color: $nav-el;
+            max-width: 300px;
+            box-sizing: border-box;
+            text-decoration: none;
+
+            > img {
+                width: 100%;
+                height: 150px;
+                box-sizing: border-box;
+                object-fit: cover;
+                margin: 5px auto;
+                box-shadow: 0 4px 2px -2px $curtain-color;
+            }
+
+            label:first-child {
+                padding: 6px;
+                margin: 2px;
+                text-shadow: 2px 2px #000;
+                font-size: 1.3em;
+                cursor: pointer;
+            }
+
+            > .details {
+                display: flex;
+                flex-flow: row nowrap;
+                width: 100%;
+                padding: 10px;
+                margin: 2px auto;
+                border-top: 2px solid #a3092a;
+
+
+                > .catalogDetails {
+                    display: flex;
+                    flex-flow: column;
+                    justify-content: flex-end;
+                    width: 100%;
+
+                    > div:first-child {
+                        font-size: .85em;
+                    }
+
+                    > div {
+                        font-size: .68em;
+                    }
+                }
+
+                > .userDetails {
+                    display: flex;
+                    flex-flow: column;
+                    align-items: flex-end;
+                    width: 100%;
+
+                    > img {
+                        height: 45px;
+                        width: 45px;
+                    }
+
+                    > label {
+                        
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,26 @@
+@import '../theme/theme';
+
+$dark-bar: darken(#BB0A30, 5%);
+
+.Bar{
+
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 5px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $dark-bar;
+    z-index: 2;        
+    > h3 {
+        color: $nav-el;
+        margin: 0px 5px;
+        font-size: 2em;
+        text-shadow: 2px 5px #000;
+    }
+    > #menu {
+        position: relative;
+        margin: 0px 5px;
+    }
+}

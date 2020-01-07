@@ -1,22 +1,48 @@
 @import "../theme/theme";
 
-.Navbar {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 60px;
-    width: 100%;
-    background: $primary;
-    color: $on-primary-light;
-    font-size: 22px;
-    box-shadow: 0px -2px 15px rgba(50,50,50, .45);
+#nav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 2;
+    right: -10px;
+    top: 0;
+    background-color: $nav;
+    overflow-x: hidden;
+    transition: .5s;
+    box-shadow: -3px 0px 5px 5px $nav;
+    z-index: 3;
 
-    a{
-        color: inherit;
+    .closeBtn {
+        position: absolute;
+        display: block;
         text-decoration: none;
+        color: $nav-el;
+        top: 20px;
+        left: 45px;
+        font-size: 60px;
     }
 
-    .active{
-        color: $highlight;
+    .overlay-content {
+        position: relative;
+        top: 25%;
+        width: 100%;
+        text-align: center;
+        margin-top: 30px;
+
+        > a {
+            padding: 8px;
+            text-decoration: none;
+            font-size: 36px;
+            color: $nav-el;
+            display: block;
+            transition: .3s;
+
+            &:hover {
+                background: $nav-el-bg-hover;
+                color: $background;
+            }
+        }
+        
     }
 }

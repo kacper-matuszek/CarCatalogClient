@@ -1,0 +1,19 @@
+@import '../theme/theme';
+
+#menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 0em 2em;
+    z-index: 1;
+    cursor: pointer;
+    padding: .5em;
+
+    > div {
+        width: 35px;
+        height: 3px;
+        background-color: $nav-el;
+        margin: 6px 0;
+        box-shadow: 2px 2px #000;
+    }
+}

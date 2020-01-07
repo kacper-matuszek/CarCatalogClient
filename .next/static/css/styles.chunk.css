@@ -1,47 +1,248 @@
-@import url(https://fonts.googleapis.com/css?family=Raleway:800|Merriweather+Sans|Share+Tech+Mono);
-@import url(https://fonts.googleapis.com/css?family=Raleway:800|Merriweather+Sans|Share+Tech+Mono);
-@import url(https://fonts.googleapis.com/css?family=Raleway:800|Merriweather+Sans|Share+Tech+Mono);
-.Header {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  height: 50px;
-  width: 100%;
-  color: #fff;
-  background: #FA4141;
-  font-family: "Share Tech Mono", monospace; }
+@import url(https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap);
+@keyframes anim-1 {
+  0%, 8.3% {
+    left: -100%;
+    opacity: 0; }
+  8.3%, 25% {
+    left: 20%;
+    opacity: 1; }
+  33.33%, 100% {
+    left: 110%;
+    opacity: 0; } }
 
-.Navbar {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  height: 60px;
+@keyframes anim-2 {
+  0%, 33.33% {
+    left: -100%;
+    opacity: 0; }
+  41.63%, 58.29% {
+    left: 20%;
+    opacity: 1; }
+  66.66%, 100% {
+    left: 110%;
+    opacity: 0; } }
+
+@keyframes anim-3 {
+  0%, 66.66% {
+    left: -100%;
+    opacity: 0; }
+  74.96%, 91.62% {
+    left: 20%;
+    opacity: 1; }
+  100% {
+    left: 110%;
+    opacity: 0; } }
+
+h1 {
+  position: relative;
+  color: #FFF;
+  font-size: 4em;
+  transform: rotate(-13deg);
+  opacity: .8; }
+  h1:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: .8em;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-bottom: .1em solid;
+    border-radius: 60%; }
+  h1:before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: -.6em;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-top: .1em solid;
+    border-radius: 60%; }
+
+.box {
+  position: absolute;
   width: 100%;
-  background: #FFFFFF;
-  color: #A1A1A1;
-  font-size: 22px;
-  box-shadow: 0px -2px 15px rgba(50, 50, 50, 0.45); }
-  .Navbar a {
-    color: inherit;
-    text-decoration: none; }
-  .Navbar .active {
-    color: #FA4141; }
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  transition: 3s;
+  overflow: hidden; }
+  .box #logo {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    top: 5em;
+    left: 12em; }
+
+#curtain {
+  background-image: url("/static/images/26227.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  box-sizing: border-box; }
+  #curtain .darkness {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: rgba(0, 0, 0, 0.4); }
+  #curtain #info {
+    overflow: hidden;
+    display: flex;
+    position: absolute;
+    bottom: 150px;
+    left: 0px;
+    height: 10em;
+    width: 100%;
+    justify-content: center;
+    align-items: center; }
+    #curtain #info .item-1,
+    #curtain #info .item-2,
+    #curtain #info .item-3 {
+      position: absolute;
+      display: block;
+      width: 60%;
+      font-size: 2.35em;
+      animation-duration: 20s;
+      text-align: center;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+      color: #CECECE; }
+    #curtain #info .item-1 {
+      animation-name: anim-1; }
+    #curtain #info .item-2 {
+      animation-name: anim-2; }
+    #curtain #info .item-3 {
+      animation-name: anim-3; }
+
+@keyframes anim-1 {
+  0%, 8.3% {
+    left: -100%;
+    opacity: 0; }
+  8.3%, 25% {
+    left: 20%;
+    opacity: 1; }
+  33.33%, 100% {
+    left: 110%;
+    opacity: 0; } }
+
+@keyframes anim-2 {
+  0%, 33.33% {
+    left: -100%;
+    opacity: 0; }
+  41.63%, 58.29% {
+    left: 20%;
+    opacity: 1; }
+  66.66%, 100% {
+    left: 110%;
+    opacity: 0; } }
+
+@keyframes anim-3 {
+  0%, 66.66% {
+    left: -100%;
+    opacity: 0; }
+  74.96%, 91.62% {
+    left: 20%;
+    opacity: 1; }
+  100% {
+    left: 110%;
+    opacity: 0; } }
 
 .Layout {
-  flex: 1;
   display: flex;
   flex-direction: column;
-  height: 100%;
-  width: 100%; }
-  .Layout .Content {
-    flex: 1;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+  font-family: "Kaushan Script", cursive; }
+  .Layout > .BodySceleton {
     display: flex;
-    flex-direction: column;
-    background: #2A3747;
-    color: #fff;
-    font-family: "Merriweather Sans", sans-serif; }
-    .Layout .Content a {
-      color: inherit; }
+    position: relative;
+    flex-flow: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 80%;
+    margin: 60px auto; }
+
+@keyframes anim-1 {
+  0%, 8.3% {
+    left: -100%;
+    opacity: 0; }
+  8.3%, 25% {
+    left: 20%;
+    opacity: 1; }
+  33.33%, 100% {
+    left: 110%;
+    opacity: 0; } }
+
+@keyframes anim-2 {
+  0%, 33.33% {
+    left: -100%;
+    opacity: 0; }
+  41.63%, 58.29% {
+    left: 20%;
+    opacity: 1; }
+  66.66%, 100% {
+    left: 110%;
+    opacity: 0; } }
+
+@keyframes anim-3 {
+  0%, 66.66% {
+    left: -100%;
+    opacity: 0; }
+  74.96%, 91.62% {
+    left: 20%;
+    opacity: 1; }
+  100% {
+    left: 110%;
+    opacity: 0; } }
+
+#nav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 2;
+  right: -10px;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  overflow-x: hidden;
+  transition: .5s;
+  box-shadow: -3px 0px 5px 5px rgba(0, 0, 0, 0.9);
+  z-index: 3; }
+  #nav .closeBtn {
+    position: absolute;
+    display: block;
+    text-decoration: none;
+    color: #FFF;
+    top: 20px;
+    left: 45px;
+    font-size: 60px; }
+  #nav .overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px; }
+    #nav .overlay-content > a {
+      padding: 8px;
+      text-decoration: none;
+      font-size: 36px;
+      color: #FFF;
+      display: block;
+      transition: .3s; }
+      #nav .overlay-content > a:hover {
+        background: #F1F1F1;
+        color: #000; }
 
 * {
   box-sizing: border-box; }
@@ -51,8 +252,13 @@ html, body, #__next {
   width: 100%; }
 
 body {
-  margin: 0;
-  padding: 0; }
+  padding: 0;
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  justify-content: center;
+  margin: 0px;
+  background: #000; }
 
 #root {
   display: flex;
@@ -70,11 +276,367 @@ body {
 
 ::-webkit-scrollbar-thumb {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  background: var(--borders-color);
+  background: #a00f2d;
   border-radius: 10px; }
 
 ::-webkit-scrollbar-thumb:hover {
   background: #e61541; }
+
+@keyframes anim-1 {
+  0%, 8.3% {
+    left: -100%;
+    opacity: 0; }
+  8.3%, 25% {
+    left: 20%;
+    opacity: 1; }
+  33.33%, 100% {
+    left: 110%;
+    opacity: 0; } }
+
+@keyframes anim-2 {
+  0%, 33.33% {
+    left: -100%;
+    opacity: 0; }
+  41.63%, 58.29% {
+    left: 20%;
+    opacity: 1; }
+  66.66%, 100% {
+    left: 110%;
+    opacity: 0; } }
+
+@keyframes anim-3 {
+  0%, 66.66% {
+    left: -100%;
+    opacity: 0; }
+  74.96%, 91.62% {
+    left: 20%;
+    opacity: 1; }
+  100% {
+    left: 110%;
+    opacity: 0; } }
+
+.Bar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 5px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #a3092a;
+  z-index: 2; }
+  .Bar > h3 {
+    color: #FFF;
+    margin: 0px 5px;
+    font-size: 2em;
+    text-shadow: 2px 5px #000; }
+  .Bar > #menu {
+    position: relative;
+    margin: 0px 5px; }
+
+@keyframes anim-1 {
+  0%, 8.3% {
+    left: -100%;
+    opacity: 0; }
+  8.3%, 25% {
+    left: 20%;
+    opacity: 1; }
+  33.33%, 100% {
+    left: 110%;
+    opacity: 0; } }
+
+@keyframes anim-2 {
+  0%, 33.33% {
+    left: -100%;
+    opacity: 0; }
+  41.63%, 58.29% {
+    left: 20%;
+    opacity: 1; }
+  66.66%, 100% {
+    left: 110%;
+    opacity: 0; } }
+
+@keyframes anim-3 {
+  0%, 66.66% {
+    left: -100%;
+    opacity: 0; }
+  74.96%, 91.62% {
+    left: 20%;
+    opacity: 1; }
+  100% {
+    left: 110%;
+    opacity: 0; } }
+
+#menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin: 0em 2em;
+  z-index: 1;
+  cursor: pointer;
+  padding: .5em; }
+  #menu > div {
+    width: 35px;
+    height: 3px;
+    background-color: #FFF;
+    margin: 6px 0;
+    box-shadow: 2px 2px #000; }
+
+@keyframes anim-1 {
+  0%, 8.3% {
+    left: -100%;
+    opacity: 0; }
+  8.3%, 25% {
+    left: 20%;
+    opacity: 1; }
+  33.33%, 100% {
+    left: 110%;
+    opacity: 0; } }
+
+@keyframes anim-2 {
+  0%, 33.33% {
+    left: -100%;
+    opacity: 0; }
+  41.63%, 58.29% {
+    left: 20%;
+    opacity: 1; }
+  66.66%, 100% {
+    left: 110%;
+    opacity: 0; } }
+
+@keyframes anim-3 {
+  0%, 66.66% {
+    left: -100%;
+    opacity: 0; }
+  74.96%, 91.62% {
+    left: 20%;
+    opacity: 1; }
+  100% {
+    left: 110%;
+    opacity: 0; } }
+
+.sceletonList {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+  margin-right: 1em;
+  margin-left: 1em;
+  background: #000;
+  width: 100%;
+  color: #CECECE; }
+  .sceletonList > .list {
+    display: flex;
+    position: relative;
+    flex-direction: column; }
+    .sceletonList > .list > .containerDetails {
+      display: flex;
+      position: relative;
+      background: rgba(41, 41, 41, 0.6);
+      margin: .2em;
+      padding: .6em;
+      max-height: 250px;
+      flex-flow: row nowrap;
+      align-items: stretch;
+      align-content: stretch; }
+      .sceletonList > .list > .containerDetails:after {
+        position: absolute;
+        content: " ";
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background: #190e0e;
+        background: linear-gradient(90deg, rgba(25, 14, 14, 0) 50%, rgba(255, 239, 239, 0.402398) 50%, rgba(25, 14, 14, 0) 79%);
+        visibility: collapse;
+        background-size: 200% auto;
+        background-position: left;
+        transition: .35s ease;
+        z-index: 0; }
+      .sceletonList > .list > .containerDetails:hover:after {
+        background-position: right;
+        visibility: visible; }
+      .sceletonList > .list > .containerDetails > div:first-child {
+        position: relative;
+        display: flex;
+        align-items: stretch;
+        width: 40%;
+        z-index: 1; }
+        .sceletonList > .list > .containerDetails > div:first-child > a {
+          display: flex;
+          position: relative;
+          color: var(--bg-color);
+          align-items: flex-start;
+          text-decoration: none; }
+          .sceletonList > .list > .containerDetails > div:first-child > a > div:first-child {
+            position: relative;
+            display: flex;
+            width: 100%;
+            max-height: 250px; }
+            .sceletonList > .list > .containerDetails > div:first-child > a > div:first-child > img {
+              object-fit: cover;
+              position: relative;
+              width: 100%;
+              height: 13.7em; }
+      .sceletonList > .list > .containerDetails > div:last-child {
+        width: 80%;
+        position: relative;
+        display: flex;
+        flex-flow: column nowrap;
+        z-index: 1; }
+        .sceletonList > .list > .containerDetails > div:last-child > a {
+          display: block;
+          text-decoration: none;
+          position: relative;
+          color: var(--bg-color); }
+          .sceletonList > .list > .containerDetails > div:last-child > a > h2 {
+            list-style: none;
+            margin: .4em;
+            color: #FFF;
+            letter-spacing: .03em;
+            text-indent: .3em;
+            border-bottom: 2px solid #BB0A30; }
+        .sceletonList > .list > .containerDetails > div:last-child .details {
+          display: flex;
+          position: relative;
+          height: 100%; }
+          .sceletonList > .list > .containerDetails > div:last-child .details > a {
+            text-decoration: none;
+            display: inherit;
+            align-items: stretch;
+            width: 100%;
+            color: var(--bg-color); }
+            .sceletonList > .list > .containerDetails > div:last-child .details > a > .priceBuy {
+              display: flex;
+              padding: .3em;
+              align-items: center;
+              justify-content: center;
+              width: 20%;
+              min-width: 20%;
+              flex-flow: column nowrap; }
+              .sceletonList > .list > .containerDetails > div:last-child .details > a > .priceBuy > a {
+                display: block;
+                text-decoration: none;
+                width: 100%;
+                padding: .2em;
+                text-align: center;
+                color: var(--bg-color); }
+            .sceletonList > .list > .containerDetails > div:last-child .details > a > .configuration {
+              display: flex;
+              position: relative;
+              align-items: flex-start;
+              width: 100%;
+              padding: .3em; }
+              .sceletonList > .list > .containerDetails > div:last-child .details > a > .configuration > .sceletonSection {
+                display: flex;
+                position: relative;
+                flex-flow: column nowrap;
+                margin: .3em; }
+                .sceletonList > .list > .containerDetails > div:last-child .details > a > .configuration > .sceletonSection > .section {
+                  display: flex;
+                  justify-content: flex-start;
+                  align-items: center; }
+                  .sceletonList > .list > .containerDetails > div:last-child .details > a > .configuration > .sceletonSection > .section > label {
+                    font-size: 1.2em;
+                    font-weight: bold;
+                    padding: .3em; }
+                  .sceletonList > .list > .containerDetails > div:last-child .details > a > .configuration > .sceletonSection > .section > span {
+                    font-size: 1em;
+                    padding: .5em;
+                    text-align: center;
+                    vertical-align: middle;
+                    color: #a8a8a8; }
+
+@keyframes anim-1 {
+  0%, 8.3% {
+    left: -100%;
+    opacity: 0; }
+  8.3%, 25% {
+    left: 20%;
+    opacity: 1; }
+  33.33%, 100% {
+    left: 110%;
+    opacity: 0; } }
+
+@keyframes anim-2 {
+  0%, 33.33% {
+    left: -100%;
+    opacity: 0; }
+  41.63%, 58.29% {
+    left: 20%;
+    opacity: 1; }
+  66.66%, 100% {
+    left: 110%;
+    opacity: 0; } }
+
+@keyframes anim-3 {
+  0%, 66.66% {
+    left: -100%;
+    opacity: 0; }
+  74.96%, 91.62% {
+    left: 20%;
+    opacity: 1; }
+  100% {
+    left: 110%;
+    opacity: 0; } }
+
+.VerticalContent {
+  display: flex;
+  position: relative;
+  flex-flow: row wrap;
+  justify-content: center;
+  overflow-y: hidden; }
+  .VerticalContent > div {
+    margin: 10px;
+    padding: 5px;
+    background-color: #484848;
+    text-shadow: 1px 1px #000; }
+    .VerticalContent > div > a {
+      display: flex;
+      position: relative;
+      flex-direction: column;
+      color: #FFF;
+      max-width: 300px;
+      box-sizing: border-box;
+      text-decoration: none; }
+      .VerticalContent > div > a > img {
+        width: 100%;
+        height: 150px;
+        box-sizing: border-box;
+        object-fit: cover;
+        margin: 5px auto;
+        box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.4); }
+      .VerticalContent > div > a label:first-child {
+        padding: 6px;
+        margin: 2px;
+        text-shadow: 2px 2px #000;
+        font-size: 1.3em;
+        cursor: pointer; }
+      .VerticalContent > div > a > .details {
+        display: flex;
+        flex-flow: row nowrap;
+        width: 100%;
+        padding: 10px;
+        margin: 2px auto;
+        border-top: 2px solid #a3092a; }
+        .VerticalContent > div > a > .details > .catalogDetails {
+          display: flex;
+          flex-flow: column;
+          justify-content: flex-end;
+          width: 100%; }
+          .VerticalContent > div > a > .details > .catalogDetails > div:first-child {
+            font-size: .85em; }
+          .VerticalContent > div > a > .details > .catalogDetails > div {
+            font-size: .68em; }
+        .VerticalContent > div > a > .details > .userDetails {
+          display: flex;
+          flex-flow: column;
+          align-items: flex-end;
+          width: 100%; }
+          .VerticalContent > div > a > .details > .userDetails > img {
+            height: 45px;
+            width: 45px; }
 
 
 /*# sourceMappingURL=styles.chunk.css.map*/
