@@ -9364,7 +9364,7 @@ var Index = function Index() {
 
 /***/ }),
 
-/***/ 1:
+/***/ 20:
 /*!********************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=E%3A%5CVisualProjects%5CCarCatalogApp%5CCarCatalogClient%5Cpages%5Cindex.js ***!
   \********************************************************************************************************************************************/
@@ -9387,5 +9387,5 @@ module.exports = dll_5f137288facb1107b491;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js","styles"]]]);
+},[[20,"static/runtime/webpack.js","styles"]]]);
 //# sourceMappingURL=index.js.map
