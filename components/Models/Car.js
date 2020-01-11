@@ -1,8 +1,13 @@
-import CarLink from './Link.js';
+import Link from 'next/link'
 
+const CarLink = props => (
+    <Link href="/cars/[car]" as={`/cars/${props.car}`}>
+        <a>{props.children}</a>
+    </Link>
+)
 const Car = props => {
     return (
-        <div className="containercar">
+        <div className="containerDetails">
             <div>
                 <CarLink car={props.car.id}>
                     <div>
@@ -14,7 +19,7 @@ const Car = props => {
                 <CarLink car={props.car.id}>
                     <h2>{props.car.manufacturer} {props.car.model}</h2>
                 </CarLink>
-                <div className="car">
+                <div className="details">
                     <CarLink car={props.car.id}>
                         <div className="configuration">
                             <div className="sceletonSection">
@@ -49,4 +54,4 @@ const Car = props => {
     );
 }
 
-export default Car
+export default Car;

@@ -12,7 +12,7 @@ const Cars = (props) => {
     )
 }
 
-Cars.getInitialProps = async (context) => {
+Cars.getInitialProps = async () => {
     const res = await fetch(ApiBasicUrl().concat('/car'));
     const data = await res.json();
     console.log(data);
@@ -21,4 +21,4 @@ Cars.getInitialProps = async (context) => {
     };
   };
 
-  export default Car;
+  export default Cars;

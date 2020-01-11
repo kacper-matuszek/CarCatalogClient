@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -228,32 +228,46 @@ const Navbar = props => __jsx("div", {
     lineNumber: 18
   },
   __self: undefined
-}, "Home")), __jsx(NavLink, {
-  id: "catalog",
+}, "Home")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
+  href: "/catalogs",
+  as: "/catalogs",
   __source: {
     fileName: _jsxFileName,
     lineNumber: 20
   },
   __self: undefined
-}, "Catalogs"), __jsx(NavLink, {
-  id: "car",
+}, __jsx("a", {
   __source: {
     fileName: _jsxFileName,
     lineNumber: 21
   },
   __self: undefined
-}, "Cars"), __jsx(NavLink, {
+}, "Catalogs")), __jsx(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
+  href: "/cars",
+  as: "/cars",
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 23
+  },
+  __self: undefined
+}, __jsx("a", {
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 24
+  },
+  __self: undefined
+}, "Cars")), __jsx(NavLink, {
   id: "create-catalog",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 22
+    lineNumber: 26
   },
   __self: undefined
 }, "Create a Catalog"), __jsx(NavLink, {
   id: "create-car",
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 23
+    lineNumber: 27
   },
   __self: undefined
 }, "Create a Car")));
@@ -2279,7 +2293,7 @@ const Index = () => {
 
 /***/ }),
 
-/***/ 4:
+/***/ 3:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/

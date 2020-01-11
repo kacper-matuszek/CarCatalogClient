@@ -1,6 +1,7 @@
 
 import Layout from '../../components/MyLayout';
 import CatalogList from '../../components/Lists/CatalogList';
+import ApiBasicUrl from '../../configuration/model/apiSettings';
 
 const Catalogs = (props) => {
     return (

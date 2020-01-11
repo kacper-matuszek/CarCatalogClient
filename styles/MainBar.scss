@@ -12,7 +12,8 @@ $dark-bar: darken(#BB0A30, 5%);
     justify-content: space-between;
     align-items: center;
     background-color: $dark-bar;
-    z-index: 2;        
+    z-index: 2;   
+    box-shadow: 3px 3px 10px;     
     > h3 {
         color: $nav-el;
         margin: 0px 5px;

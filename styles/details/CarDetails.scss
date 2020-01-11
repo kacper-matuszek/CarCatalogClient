@@ -8,7 +8,7 @@
     width: 100%;
     position: relative;
     color: $nav-el;
-    background-color: rgba(0,0,0, .4);
+    background-color: $section-details;
     > .sceletonBanner {
         position: relative;
         margin: .2em;
@@ -82,12 +82,17 @@
             height: 100%;
             width:100%;
         }
+
+        > .Banner + div {
+            background-color: $section-details;
+            z-index: -1;
+        }
     }
 }
 
 .Banner {
     position: absolute;
-    background: rgb(112, 0, 33);
+    background: $banner;
     text-shadow: 3px 3px 2px #000;
     padding: .5em;
 
@@ -99,7 +104,7 @@
         height: 0px;
         right: 0;
         bottom: -1.4em;
-        border-top: 1.5em solid rgb(112, 0, 33);
+        border-top: 1.5em solid $banner;
         border-right: 2.5em  transparent;
         border-left: 3em solid transparent;
 
@@ -113,7 +118,7 @@
         height: 0px;
         left: 0;
         bottom: -1.4em;
-        border-top: 1.5em solid rgb(112, 0, 33);
+        border-top: 1.5em solid $banner;
         border-right: 3em solid transparent;
         border-left: 2.5em  transparent;
     }
@@ -138,48 +143,3 @@
         color: darken($info-color, 15%);
     }
 }
-/*.headerModel > div > div {
-    display: flex;
-    flex-flow: column;
-    box-sizing: border-box;
-    justify-content: center;
-    align-items:stretch;
-    position: relative;
-    height: 100%;
-    width:100%;
-}
-.headerModel > div > div > h1 {
-    display: block;
-    vertical-align: middle;
-    text-align: center;
-}
-@keyframes pulse {
-    20%, 100% {
-        box-shadow: 0 0 0 2.3em rgba(112, 0, 33, 0);
-    }
-}
-.headerModel > div > div > button {
-    font-size: 100%;
-    border: 0;
-    padding: .5em;
-    margin: .5em;
-    text-shadow: 2px 2px 2px #000;
-    background-color: #700021;
-    color: #F1F1F1;
-    border: 2px solid transparent;
-    border-radius: .3em;
-    box-shadow: 0 0 0 0 rgba(112, 0, 33, .7);
-    transition: .25s ease;
-    -webkit-animation: pulse 5s infinite cubic-bezier(.45, 0, 0, 1);
-}
-.headerModel > div > div > button:hover {
-    -webkit-animation: none;
-    background: #e61541;
-    cursor: pointer;
-}
-.headerModel > div > div > button > a {
-    text-decoration: none;
-    color: #F1F1F1;
-    display: block;
-    width: 100%;
-} */

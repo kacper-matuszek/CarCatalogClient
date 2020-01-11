@@ -1,7 +1,12 @@
 
 import Link from 'next/link'
-import CarListLink from './Link';
+import parseDate from '../../static/scripts/DateHelper'
 
+const CarListLink = props => (
+    <Link href="/cars/catalog/[catalog]" as={`/cars/catalog/${props.catalog}`}>
+        <a>{props.children}</a>
+    </Link>
+)
 const Catalog = (props) => {
     return (
         <div>
@@ -11,7 +16,7 @@ const Catalog = (props) => {
                     <div className="details">
                         <div className="catalogDetails">
                             <div>Created date: </div>
-                            <div>{props.catalog.createdDate}</div>
+                            <div>{parseDate(props.catalog.createdDate)}</div>
                         </div>
                         <div className="userDetails">
                             <img src={props.catalog.user.avatar} />
