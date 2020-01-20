@@ -2,6 +2,7 @@
 import Layout from '../../components/MyLayout';
 import CatalogList from '../../components/Lists/CatalogList';
 import ApiBasicUrl from '../../configuration/model/apiSettings';
+import fetch from 'isomorphic-unfetch'
 
 const Catalogs = (props) => {
     return (

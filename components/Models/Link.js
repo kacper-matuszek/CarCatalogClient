@@ -1,15 +1,16 @@
-/*import Link from 'next/link'
+import Link from 'next/link'
 
-const CarLink = props => (
-    <Link href="/cars/[car]" as={`/car/${props.car}`}>
+export const CarLink = props => (
+    <Link href="/cars/[car]" as={`/cars/${props.car}`}>
         <a>{props.children}</a>
     </Link>
-)
+);
 
-const CarListLink = props => (
-    <Link href="/cars/[catalog]" as='catalog/cars'>
+export const CarListLink = props => (
+    <Link href={{ pathname: '/catalogs/[catalog]', query: {
+        catalogId: props.catalogId,
+        catalog: props.catalog
+    }}} as={`/catalogs/${props.catalog}`}>
         <a>{props.children}</a>
     </Link>
-)
-export default CarLink;
-export default CarListLink;*/
+);

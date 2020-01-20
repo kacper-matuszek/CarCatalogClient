@@ -1,10 +1,10 @@
-import Link from 'next/link'
+import { CarLink } from '../Models/Link.js';
 
-const CarLink = props => (
+/*const CarLink = props => (
     <Link href="/cars/[car]" as={`/cars/${props.car}`}>
         <a>{props.children}</a>
     </Link>
-)
+)*/
 const Car = props => {
     return (
         <div className="containerDetails">

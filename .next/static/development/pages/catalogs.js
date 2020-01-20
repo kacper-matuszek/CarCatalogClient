@@ -165,110 +165,154 @@ function openNav() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _static_scripts_DateHelper__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../static/scripts/DateHelper */ "./static/scripts/DateHelper.js");
+/* harmony import */ var _static_scripts_DateHelper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../static/scripts/DateHelper */ "./static/scripts/DateHelper.js");
+/* harmony import */ var _Models_Link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Models/Link */ "./components/Models/Link.js");
 var _jsxFileName = "E:\\VisualProjects\\CarCatalogApp\\CarCatalogClient\\components\\Models\\Catalog.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-var CarListLink = function CarListLink(props) {
-  return __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    href: "/cars/catalog/[catalog]",
-    as: "/cars/catalog/".concat(props.catalog),
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 6
-    },
-    __self: this
-  }, __jsx("a", {
+var Catalog = function Catalog(props) {
+  return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 7
     },
     __self: this
-  }, props.children));
-};
-
-var Catalog = function Catalog(props) {
-  return __jsx("div", {
+  }, __jsx(_Models_Link__WEBPACK_IMPORTED_MODULE_2__["CarListLink"], {
+    catalog: props.catalog.name,
+    catalogId: props.catalog.id,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12
-    },
-    __self: this
-  }, __jsx(CarListLink, {
-    catalog: props.catalog.id,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 13
+      lineNumber: 8
     },
     __self: this
   }, __jsx("label", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14
+      lineNumber: 9
     },
     __self: this
   }, props.catalog.name), __jsx("img", {
     src: "../../static/images/26227.jpg",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15
+      lineNumber: 10
     },
     __self: this
   }), __jsx("div", {
     className: "details",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16
+      lineNumber: 11
     },
     __self: this
   }, __jsx("div", {
     className: "catalogDetails",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17
+      lineNumber: 12
     },
     __self: this
   }, __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 13
     },
     __self: this
   }, "Created date: "), __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
+      lineNumber: 14
     },
     __self: this
-  }, Object(_static_scripts_DateHelper__WEBPACK_IMPORTED_MODULE_2__["default"])(props.catalog.createdDate))), __jsx("div", {
+  }, Object(_static_scripts_DateHelper__WEBPACK_IMPORTED_MODULE_1__["default"])(props.catalog.createdDate))), __jsx("div", {
     className: "userDetails",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21
+      lineNumber: 16
     },
     __self: this
   }, __jsx("img", {
     src: props.catalog.user.avatar,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22
+      lineNumber: 17
     },
     __self: this
   }), __jsx("label", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23
+      lineNumber: 18
     },
     __self: this
   }, props.catalog.user.userName)))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Catalog);
+
+/***/ }),
+
+/***/ "./components/Models/Link.js":
+/*!***********************************!*\
+  !*** ./components/Models/Link.js ***!
+  \***********************************/
+/*! exports provided: CarLink, CarListLink */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CarLink", function() { return CarLink; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CarListLink", function() { return CarListLink; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
+var _jsxFileName = "E:\\VisualProjects\\CarCatalogApp\\CarCatalogClient\\components\\Models\\Link.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+var CarLink = function CarLink(props) {
+  return __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
+    href: "/cars/[car]",
+    as: "/cars/".concat(props.car),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 4
+    },
+    __self: this
+  }, __jsx("a", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 5
+    },
+    __self: this
+  }, props.children));
+};
+var CarListLink = function CarListLink(props) {
+  return __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
+    href: {
+      pathname: '/catalogs/[catalog]',
+      query: {
+        catalogId: props.catalogId,
+        catalog: props.catalog
+      }
+    },
+    as: "/catalogs/".concat(props.catalog),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10
+    },
+    __self: this
+  }, __jsx("a", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 14
+    },
+    __self: this
+  }, props.children));
+};
 
 /***/ }),
 
@@ -5376,6 +5420,18 @@ var e,t=(e=__webpack_require__(/*! querystring */ "./node_modules/querystring-es
 
 /***/ }),
 
+/***/ "./node_modules/next/dist/build/polyfills/fetch/index.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/next/dist/build/polyfills/fetch/index.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* globals self */var fetch=self.fetch.bind(self);module.exports=fetch;module.exports.default=module.exports;
+
+/***/ }),
+
 /***/ "./node_modules/next/dist/build/polyfills/object-assign.js":
 /*!***********************************************************************************************************************!*\
   !*** delegated ./node_modules/next/dist/build/polyfills/object-assign.js from dll-reference dll_5f137288facb1107b491 ***!
@@ -9556,10 +9612,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_MyLayout__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/MyLayout */ "./components/MyLayout.js");
 /* harmony import */ var _components_Lists_CatalogList__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/Lists/CatalogList */ "./components/Lists/CatalogList.js");
 /* harmony import */ var _configuration_model_apiSettings__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../configuration/model/apiSettings */ "./configuration/model/apiSettings.js");
+/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! isomorphic-unfetch */ "./node_modules/next/dist/build/polyfills/fetch/index.js");
+/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_5__);
 
 var _jsxFileName = "E:\\VisualProjects\\CarCatalogApp\\CarCatalogClient\\pages\\catalogs\\index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+
 
 
 
@@ -9569,14 +9628,14 @@ var Catalogs = function Catalogs(props) {
     title: "Catalogs",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8
+      lineNumber: 9
     },
     __self: this
   }, __jsx(_components_Lists_CatalogList__WEBPACK_IMPORTED_MODULE_3__["default"], {
     catalogs: props.objects,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9
+      lineNumber: 10
     },
     __self: this
   }));
@@ -9589,7 +9648,7 @@ Catalogs.getInitialProps = function _callee() {
       switch (_context.prev = _context.next) {
         case 0:
           _context.next = 2;
-          return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(fetch(Object(_configuration_model_apiSettings__WEBPACK_IMPORTED_MODULE_4__["default"])().concat('/catalog')));
+          return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_5___default()(Object(_configuration_model_apiSettings__WEBPACK_IMPORTED_MODULE_4__["default"])().concat('/catalog')));
 
         case 2:
           res = _context.sent;

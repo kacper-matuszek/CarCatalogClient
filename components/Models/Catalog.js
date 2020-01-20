@@ -1,16 +1,11 @@
 
-import Link from 'next/link'
-import parseDate from '../../static/scripts/DateHelper'
+import parseDate from '../../static/scripts/DateHelper';
+import { CarListLink } from '../Models/Link';
 
-const CarListLink = props => (
-    <Link href="/cars/catalog/[catalog]" as={`/cars/catalog/${props.catalog}`}>
-        <a>{props.children}</a>
-    </Link>
-)
 const Catalog = (props) => {
     return (
         <div>
-            <CarListLink catalog={props.catalog.id}>
+            <CarListLink catalog={props.catalog.name} catalogId={props.catalog.id}>
                     <label>{props.catalog.name}</label>
                     <img src="../../static/images/26227.jpg"/>
                     <div className="details">
