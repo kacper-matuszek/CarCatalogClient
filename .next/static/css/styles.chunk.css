@@ -3,7 +3,6 @@
 @import url(https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap);
 @import url(https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap);
 @import url(https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap);
-@import url(https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap);
 @keyframes anim-1 {
   0%, 8.3% {
     left: -100%;
@@ -114,7 +113,8 @@
   height: 100vh;
   width: 100%;
   margin: 0;
-  font-family: "Kaushan Script", cursive; }
+  font-family: "Kaushan Script", cursive;
+  background-color: #000; }
   .Layout > .BodySceleton {
     display: flex;
     position: relative;
@@ -122,7 +122,7 @@
     justify-content: flex-start;
     align-items: flex-start;
     width: 80%;
-    margin: 58px auto;
+    margin: 60px auto 0px auto;
     height: 100vh; }
 
 * {
@@ -264,97 +264,52 @@ body {
     margin: 6px 0;
     box-shadow: 2px 2px #000; }
 
-@keyframes anim-1 {
-  0%, 8.3% {
-    left: -100%;
-    opacity: 0; }
-  8.3%, 25% {
-    left: 20%;
-    opacity: 1; }
-  33.33%, 100% {
-    left: 110%;
-    opacity: 0; } }
-
-@keyframes anim-2 {
-  0%, 33.33% {
-    left: -100%;
-    opacity: 0; }
-  41.63%, 58.29% {
-    left: 20%;
-    opacity: 1; }
-  66.66%, 100% {
-    left: 110%;
-    opacity: 0; } }
-
-@keyframes anim-3 {
-  0%, 66.66% {
-    left: -100%;
-    opacity: 0; }
-  74.96%, 91.62% {
-    left: 20%;
-    opacity: 1; }
-  100% {
-    left: 110%;
-    opacity: 0; } }
-
-.VerticalContent {
-  display: flex;
+.dd-wrapper {
   position: relative;
-  flex-flow: row wrap;
-  justify-content: center;
-  overflow-y: hidden; }
-  .VerticalContent > div {
-    margin: 10px;
-    padding: 5px;
-    background-color: #484848;
-    text-shadow: 1px 1px #000; }
-    .VerticalContent > div > a {
-      display: flex;
+  display: inline-block;
+  width: 200px;
+  margin: .2em; }
+  .dd-wrapper > .dd-header {
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: stretch;
+    border-bottom: 2px solid #BB0A30;
+    cursor: pointer; }
+    .dd-wrapper > .dd-header > .dd-header-title {
+      display: block;
       position: relative;
-      flex-direction: column;
-      color: #FFF;
-      max-width: 300px;
-      box-sizing: border-box;
-      text-decoration: none; }
-      .VerticalContent > div > a > img {
-        width: 100%;
-        height: 150px;
-        box-sizing: border-box;
-        object-fit: cover;
-        margin: 5px auto;
-        box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.4); }
-      .VerticalContent > div > a label:first-child {
-        padding: 6px;
-        margin: 2px;
-        text-shadow: 2px 2px #000;
-        font-size: 1.3em;
-        cursor: pointer; }
-      .VerticalContent > div > a > .details {
-        display: flex;
-        flex-flow: row nowrap;
-        width: 100%;
-        padding: 10px;
-        margin: 2px auto;
-        border-top: 2px solid #a3092a; }
-        .VerticalContent > div > a > .details > .catalogDetails {
-          display: flex;
-          flex-flow: column;
-          justify-content: flex-end;
-          width: 100%;
-          font-size: 1.24em;
-          text-shadow: 2px 2px 2px #000; }
-          .VerticalContent > div > a > .details > .catalogDetails > div:first-child {
-            font-size: .85em; }
-          .VerticalContent > div > a > .details > .catalogDetails > div {
-            font-size: .68em; }
-        .VerticalContent > div > a > .details > .userDetails {
-          display: flex;
-          flex-flow: column;
-          align-items: flex-end;
-          width: 100%; }
-          .VerticalContent > div > a > .details > .userDetails > img {
-            height: 45px;
-            width: 45px; }
+      width: 80%;
+      padding: .3em;
+      text-align: center; }
+    .dd-wrapper > .dd-header > .angle {
+      display: block;
+      position: relative;
+      width: 20%;
+      text-align: center;
+      justify-self: flex-end; }
+  .dd-wrapper > .dd-list {
+    display: flex;
+    flex-flow: column;
+    position: absolute;
+    width: 100%;
+    justify-content: center;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    margin: 0px;
+    padding: 0px;
+    z-index: 1;
+    transition: .5s ease; }
+    .dd-wrapper > .dd-list > .dd-list-item {
+      padding: .5em;
+      text-decoration: none;
+      display: block;
+      text-align: start;
+      cursor: pointer; }
+      .dd-wrapper > .dd-list > .dd-list-item:hover {
+        background-color: #e6e6e6; }
 
 @keyframes anim-1 {
   0%, 8.3% {

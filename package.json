@@ -19,6 +19,7 @@
     "node-sass": "^4.13.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-fontawesome": "^1.7.1",
     "react-onclickoutside": "^6.9.0"
   }
 }

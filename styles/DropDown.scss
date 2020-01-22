@@ -1,0 +1,60 @@
+
+.dd-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    margin: .2em;
+
+    > .dd-header {
+        position: relative;
+        display: flex;
+        flex-flow: row wrap;
+        width: 100%;
+        box-sizing: border-box;
+        align-items: center;
+        justify-content: stretch;
+        border-bottom: 2px solid #BB0A30;
+        cursor: pointer;
+
+        > .dd-header-title {
+            display: block;
+            position: relative;
+            width: 80%;
+            padding: .3em;
+            text-align: center;
+        }
+    
+        > .angle {
+            display: block;
+            position: relative;
+            width: 20%;
+            text-align: center;
+            justify-self: flex-end;
+        }
+    }
+
+    > .dd-list {
+        display: flex;
+        flex-flow: column;
+        position: absolute;
+        width: 100%;
+        justify-content: center;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        margin: 0px;
+        padding: 0px;
+        z-index: 1;
+        transition: .5s ease;
+
+        > .dd-list-item {
+            padding: .5em;
+            text-decoration: none;
+            display: block;
+            text-align: start;
+            cursor: pointer;
+
+            &:hover {
+                background-color: darken($color: #FFF, $amount: 10%);
+            }
+        }
+    }
+}

@@ -23,7 +23,9 @@ const Navbar = (props) => (
         <Link href='/cars' as='/cars'>
             <a>Cars</a>
         </Link>
-        <NavLink id="create-catalog">Create a Catalog</NavLink>
+        <Link href="/cars/create-car" as="/cars/create-car">
+            <a>Create a Catalog</a>
+        </Link>
         <NavLink id="create-car">Create a Car</NavLink>
     </div>
 </div>

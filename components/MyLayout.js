@@ -13,6 +13,7 @@ const Layout = props => (
             <title>Car Catalog</title>
             <meta name="viewport" content="width=device-width, initial-scale=1"/>
             <meta charSet="utf-8"/>
+            <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
         </Head>
         <Navbar />
         <MainBar title={props.title} />
