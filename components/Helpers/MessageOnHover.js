@@ -55,8 +55,10 @@ class MessageOnHover extends React.Component {
             <div className="message">
                 {content.map((item, key) => 
                     <React.Fragment>
-                        <div key={key}>{`${item.key}: `}</div>
-                        <div key={`${key}val`}>{item.value}</div>
+                        <div className="content">
+                            <div key={key}>{`${item.key}: `}</div>
+                            <div key={`${key}val`}>{item.value}</div>
+                        </div>
                     </React.Fragment>
                 )}
             </div>
