@@ -1,3 +1,5 @@
+@import '../theme/theme';
+
 * {
     box-sizing: border-box;
 }
@@ -14,7 +16,7 @@ body{
     width: 100%;
     justify-content: center;
     margin: 0px;   
-    background: #000; 
+    background: $background; 
 }
 
 #root {
@@ -25,12 +27,12 @@ body{
 /*-----------SCROLLBAR-------------*/
 ::-webkit-scrollbar{
     width: 16px;
-    background-color: #000;
+    background-color: $pure-black;
 }
 ::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.8);
     border-radius: 10px;
-    background-color: #000;
+    background-color: $pure-black;
 }
 ::-webkit-scrollbar-thumb {
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);

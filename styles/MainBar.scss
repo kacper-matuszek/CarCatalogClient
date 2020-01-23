@@ -1,6 +1,5 @@
 @import '../theme/theme';
 
-$dark-bar: darken(#BB0A30, 5%);
 
 .Bar{
 
@@ -11,7 +10,7 @@ $dark-bar: darken(#BB0A30, 5%);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: $dark-bar;
+    background-color: $primary;
     z-index: 2;   
     box-shadow: 3px 3px 10px;     
     > h3 {

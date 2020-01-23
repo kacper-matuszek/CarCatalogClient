@@ -11,6 +11,9 @@ class DropDown extends React.Component {
         this.state = {
             listOpen: false,
             headerTitle: this.props.title,
+            allDetails: this.props.details,
+            details: new Array(),
+            renderMessage: false,
         }
     }
 
@@ -25,6 +28,11 @@ class DropDown extends React.Component {
         }));
     }
 
+    toggleMessage() {
+        this.setState(prevState => ({
+            renderMessage: !prevState.renderMessage,
+        }));
+    }
     selectedItem(name) {
         this.setState({
             headerTitle: name,
@@ -33,17 +41,19 @@ class DropDown extends React.Component {
         this.handleClickOutSide();
     }
 
-    onHoverItem() {
-        this.refs.child.handleOnHover();
+    onBeforeRenderMessage(id) {
+        this.setState({
+            details: this.state.allDetails.filter(x => x.id == id)
+        })
+
+        this.toggleMessage();
+        this.render();
     }
 
-    outHoverItem() {
-        this.ref.child.handleOutHover();
-    }
     render() {
-        const{list, details} = this.props;
-        const{listOpen, headerTitle} = this.state;
-        
+        const{list} = this.props;
+        const{listOpen, headerTitle, renderMessage, renderClassMess} = this.state;
+
         return(
         <div className="dd-wrapper">
             <div className="dd-header" onClick={() => this.toggleList()}>
@@ -56,12 +66,14 @@ class DropDown extends React.Component {
                 {list.map((item) =>(
                     <li className="dd-list-item" key={item.id} 
                         onClick={() => this.selectedItem(item.title)}
-                        onMouseOver={() => this.onHoverItem()}
-                        onMouseOut={() => this.outHoverItem()}
+                        onMouseOver={() => this.onBeforeRenderMessage(item.id)}
+                        onMouseOut={() => this.toggleMessage()}
                         >{item.title}</li>
                 ))}
             </ul>}
-            <MessageOnHover ref="child" classToAdd="dd-list-item" delay={2000} content={details}/>
+            {renderMessage && 
+                <MessageOnHover /*onRef={ref => (this.child = ref)} delay={500}*/ content={this.state.details} />   
+            }
         </div>)
     };
 }

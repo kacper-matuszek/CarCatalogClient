@@ -15,34 +15,44 @@ CreateCar.getInitialProps = async () =>{
     const res = await fetch(ApiBasicUrl().concat('/engine'));
     const data = await res.json();
 
-    var dropDownProvider = new Array();
-    var detailsProvider = new Array();
+    const dropDownProvider = new Array();
+    const detailsProvider = new Array();
 
     data.forEach(element => {
-        var object = {
+        const object = {
             id: element.id,
-            title: `${element.code}`
+            title: `Code: ${element.code}  ${element.horsePower} KM`
         }
 
         dropDownProvider.push(object);
 
-        var fuelDetail = {
+        const fuelDetail = {
+            id: element.id,
             key: "Fuel",
             value: element.fuel
         };
 
-        var capacityDetail = {
+        const capacityDetail = {
+            id: element.id,
             key: "Capacity",
-            value: element.capacity
+            value: `${parseFloat(element.capacity).toFixed(2)} cm3`
         };
 
-        var cylinderDetail = {
+        const cylinderDetail = {
+            id: element.id,
             key: "Amount Cylinders",
             value: element.amountCylinders
+        };
+
+        const turboDetail = {
+            id: element.id,
+            key: "Turbo",
+            value: element.turbo //TODO: add emoji check
         };
         detailsProvider.push(fuelDetail);
         detailsProvider.push(capacityDetail);
         detailsProvider.push(cylinderDetail);
+        detailsProvider.push(turboDetail);
     });
 
     return{

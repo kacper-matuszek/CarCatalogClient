@@ -1,9 +1,14 @@
+@import '../../theme/theme';
 
 .wrapper {
     position: absolute;
     transition: .5s ease;
-    opacity: 0;
+    opacity: 1;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    width: 100%;
+    padding: .5em;
+    left: 105%;
+    margin: .3em;
 
     > .message {
         position: relative;
@@ -23,6 +28,6 @@
     }
 }
 
-.onHover {
+/*.onHover {
     opacity: 1;
-}
+}*/

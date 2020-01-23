@@ -1,3 +1,4 @@
+@import '../theme/theme';
 
 .dd-wrapper {
     position: relative;
@@ -13,7 +14,7 @@
         box-sizing: border-box;
         align-items: center;
         justify-content: stretch;
-        border-bottom: 2px solid #BB0A30;
+        border-bottom: 2px solid $primary;
         cursor: pointer;
 
         > .dd-header-title {
@@ -38,7 +39,6 @@
         flex-flow: column;
         position: absolute;
         width: 100%;
-        justify-content: center;
         box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
         margin: 0px;
         padding: 0px;
@@ -55,7 +55,7 @@
             cursor: pointer;
 
             &:hover {
-                background-color: darken($color: #FFF, $amount: 10%);
+                background-color: darken($info-color, $amount: 10%);
             }
         }
     }

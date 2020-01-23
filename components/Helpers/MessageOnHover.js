@@ -1,63 +1,72 @@
-import React from 'react'
+import React from 'react';
+import '../../styles/helpers/HoverMessage.scss';
 
 class MessageOnHover extends React.Component {
     constructor(props) {
+        super(props)
 
         this.state = {
-            classToAdd: props.classToAdd,
-            hoveringClass: "onHover",
+            hoveringClass: null,
             delay: props.delay,
             timeoutId: null
         }
 
     }
 
-    //Add to html object which contains class name: hoveringOnClass
-    handleOnHover() {
+   /* componentDidMount() {
+        this.props.onRef(this)
+    }
 
-        if(!timeoutId)
+    componentWillUnmount() {
+        this.props.onRef(undefined)
+    }
+
+    //Add to html object which contains class name: hoveringOnClass
+    async handleOnHover() {
+        if(!this.state.timeoutId)
         {
             this.setState({
                 timeoutId: window.setTimeout(() => {
-
-                var hoveredObject = document.getElementsByClassName(hoveringClass)[0];
-                hoveredObject.classList.add(classToAdd);
+                
                 this.setState({ timeoutId: null });
+                this.setState({ hoveringClass: "onHover"});
+                var hoveredObject = document.getElementsByClassName('wrapper')[0];
+                hoveredObject.classList.add(this.state.hoveringClass);
 
-                }, delay)
+                }, this.state.delay)
             });
         }
     }
 
     //Add to html object which contains class name: hoveringOnClass
-    handleOutHover() {
-        if(timeoutId)
+    async handleOutHover() {
+        if(this.state.timeoutId)
         { 
-            window.clearTimeout(timeoutId);
+            window.clearTimeout(this.state.timeoutId);
             this.setState({ timeoutId: null });
         } 
         else 
         {
-            var hoveredObject = document.getElementsByClassName(hoveringClass)[0];
-
-            if(hoveredObject !== undefined)
+            var hoveredObject = document.getElementsByClassName('wrapper')[0];
+            if(hoveredObject != undefined)
             {
-                hoveredObject.classList.remove(classToAdd);
+                hoveredObject.classList.remove(this.state.hoveringClass);
+                this.setState({timeoutId: null});
             }
         }
-    }
+    }*/
 
     render() {
         const{content} = this.props;
-
+        
         return (
         <div className={`wrapper ${this.state.hoveringClass}`}>
             <div className="message">
-                {content.map((item, key) => 
+                {content.map((item) => 
                     <React.Fragment>
                         <div className="content">
-                            <div key={key}>{`${item.key}: `}</div>
-                            <div key={`${key}val`}>{item.value}</div>
+                            <div key={item.id}>{`${item.key}`} </div>
+                            <div key={`${item.id}val`}>{`: ${item.value}`}</div>
                         </div>
                     </React.Fragment>
                 )}

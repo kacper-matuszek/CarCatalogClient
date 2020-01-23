@@ -92,7 +92,7 @@
 
 .Banner {
     position: absolute;
-    background: $banner;
+    background: $dark;
     text-shadow: 3px 3px 2px #000;
     padding: .5em;
 
@@ -104,7 +104,7 @@
         height: 0px;
         right: 0;
         bottom: -1.4em;
-        border-top: 1.5em solid $banner;
+        border-top: 1.5em solid $dark;
         border-right: 2.5em  transparent;
         border-left: 3em solid transparent;
 
@@ -118,7 +118,7 @@
         height: 0px;
         left: 0;
         bottom: -1.4em;
-        border-top: 1.5em solid $banner;
+        border-top: 1.5em solid $dark;
         border-right: 3em solid transparent;
         border-left: 2.5em  transparent;
     }
