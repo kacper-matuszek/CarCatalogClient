@@ -2,11 +2,26 @@ import Layout from '../../../components/MyLayout';
 import fetch from 'isomorphic-unfetch';
 import ApiBasicUrl from '../../../configuration/model/apiSettings';
 import DropDown from '../../../components/DropDown';
+import InputBox from '../../../components/InputBox';
+import '../../../styles/CarCreator.scss';
 
 const CreateCar = (props) => {
     return(
         <Layout title="Car Creator">
-            <DropDown title="Select Engine" list={props.dropList} details={props.details}/>
+            <div className="form-wrapper">
+                <div className="form-content">
+                    <div className="form-section">
+                        {props.formMainSection.map((object) => <InputBox key={object.key} 
+                                                                        labelValue={object.labelValue} />)}
+                    <DropDown title="Select Engine" list={props.dropList} details={props.details}/>
+                    </div>
+                    <div className="form-section">
+                        {props.formOtherSection.map((object, index) => <InputBox key={object.key} 
+                                                                        labelValue={object.labelValue}/>)}
+                    </div>
+                </div>
+                <button className="submit">Submit</button>
+            </div>
         </Layout>
     )
 }
@@ -14,10 +29,52 @@ const CreateCar = (props) => {
 CreateCar.getInitialProps = async () =>{
     const res = await fetch(ApiBasicUrl().concat('/engine'));
     const data = await res.json();
-
+    
     const dropDownProvider = new Array();
     const detailsProvider = new Array();
-
+    const formValues = [
+        {
+            key: "vin",
+            labelValue: "Vin"
+        },
+        {
+            key: "manuf",
+            labelValue: "Manufacturer"
+        },
+        {
+            key: "mod",
+            labelValue: "Model"
+        },
+        {
+            key: "mil",
+            labelValue: "Mileage"
+        },
+        {
+            key: "driv",
+            labelValue: "Drive Type"
+        }]
+    const formOtherValues = [
+        {
+            key: 'color',
+            labelValue: 'Color'
+        },
+        {
+            key: 'type',
+            labelValue: 'Type'
+        },
+        {
+            key: "country",
+            labelValue: 'Origin Country'
+        },
+        {
+            key: "amDoors",
+            labelValue: "Amount Doors"
+        },
+        {
+            key: "amSeats",
+            labelValue: "Amount Seats"
+        }
+    ]
     data.forEach(element => {
         const object = {
             id: element.id,
@@ -47,7 +104,7 @@ CreateCar.getInitialProps = async () =>{
         const turboDetail = {
             id: element.id,
             key: "Turbo",
-            value: element.turbo //TODO: add emoji check
+            value: element.turbo ? 'yes' : 'no' //TODO: add emoji check
         };
         detailsProvider.push(fuelDetail);
         detailsProvider.push(capacityDetail);
@@ -57,7 +114,9 @@ CreateCar.getInitialProps = async () =>{
 
     return{
         dropList: dropDownProvider,
-        details: detailsProvider
+        details: detailsProvider,
+        formMainSection: formValues,
+        formOtherSection: formOtherValues
     };
 };
 

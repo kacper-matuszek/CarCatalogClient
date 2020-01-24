@@ -1,0 +1,14 @@
+@import '../theme/theme';
+
+
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid $primary;
+    border-radius: 5%;
+    box-shadow: 0 9px 15px rgba(0, 0, 0, .1);
+
+}

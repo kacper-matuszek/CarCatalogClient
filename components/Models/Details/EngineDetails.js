@@ -8,7 +8,7 @@ const Engine = props => {
             </div>
             <div className="section">
                 <label>Capacity</label>
-                <span>{props.engine.capacity} cm3</span>
+                <span>{parseFloat(props.engine.capacity).toFixed(2)} cm3</span>
             </div>
             <div className="section">
                 <label>Fuel: </label>

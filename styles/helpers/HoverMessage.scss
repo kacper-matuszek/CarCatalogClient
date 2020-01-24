@@ -9,12 +9,12 @@
     padding: .5em;
     left: 105%;
     margin: .3em;
+    background-color: $background;
 
     > .message {
         position: relative;
         display: flex;
         flex-flow: column;
-
 
         > .content {
             position: relative;

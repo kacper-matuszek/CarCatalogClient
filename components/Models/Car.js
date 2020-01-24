@@ -25,7 +25,7 @@ const Car = props => {
                             <div className="sceletonSection">
                                 <div className="section">
                                     <label>Engine: </label>
-                                    <span>{props.car.engine.capacity} cm3</span>
+                                    <span>{parseFloat(props.car.engine.capacity).toFixed(2)} cm3</span>
                                 </div>
                                 <div className="section">
                                     <label>Horse Power: </label>

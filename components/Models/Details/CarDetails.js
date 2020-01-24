@@ -17,7 +17,7 @@ const CarDetails = (props) => {
                         </div>
                         <div className="section">
                             <label>VIN: </label>
-                            <span>{props.car.vin} KM</span>
+                            <span>{props.car.vin}</span>
                         </div>
                     </div>
                 </div>
