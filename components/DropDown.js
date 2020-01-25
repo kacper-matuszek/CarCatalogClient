@@ -13,10 +13,10 @@ class DropDown extends React.Component {
             headerTitle: this.props.title,
             allDetails: this.props.details,
             details: new Array(),
-            renderMessage: false
+            renderMessage: false,
+            selectedValue: null
         }
     }
-
     handleClickOutSide() {
         this.setState({
             listOpen: false
@@ -33,12 +33,13 @@ class DropDown extends React.Component {
             renderMessage: !prevState.renderMessage,
         }));
     }
-    selectedItem(name) {
+    selectedItem(name, key) {
         this.setState({
             headerTitle: name,
+            selectedValue: key,
             renderMessage: false
         });
-
+        this.props.handleChange(this.props.name, key);
         this.handleClickOutSide();
     }
 
@@ -57,7 +58,7 @@ class DropDown extends React.Component {
 
     render() {
         const{list, showDetails} = this.props;
-        const{listOpen, headerTitle, renderMessage} = this.state;
+        const{listOpen, headerTitle, renderMessage, headerKey} = this.state;
 
         return(
         <div className="dd-wrapper">
@@ -70,7 +71,7 @@ class DropDown extends React.Component {
             {listOpen && <ul className="dd-list">
                 {list.map((item) =>(
                     <li className="dd-list-item" key={item.id} 
-                        onClick={() => this.selectedItem(item.title)}
+                        onClick={() => this.selectedItem(item.title, item.key)}
                         onMouseOver={() => this.onBeforeRenderMessage(item.id)}
                         onMouseOut={() => this.toggleMessage()}
                         >{item.title}</li>

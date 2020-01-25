@@ -4,52 +4,106 @@ import ApiBasicUrl from '../../../configuration/model/apiSettings';
 import DropDown from '../../../components/DropDown';
 import InputBox from '../../../components/InputBox';
 import '../../../styles/CarCreator.scss';
+import { useState } from 'react';
 
 const CreateCar = (props) => {
+    const [car, setCar] = useState({
+        vin: '',
+        manufacturer: '',
+        model: '',
+        mileage: '',
+        color: '',
+        originCountry: '',
+        amountDoors: '',
+        amountSeats: '',
+        driveType: '',
+        gearBox: '',
+        type: '',
+        engine: null,
+        categoryId: '',
+        pictureName:'',
+        id:'7a47391e-8aa9-4b93-bbdf-238373e7c603',
+        catalogId: '',
+    })
+    const handleChange = async (name, value) => {
+
+        if(name === 'engine')
+        {
+            const engineResponse = await fetch(ApiBasicUrl().concat(`/engine/details/${value}`));
+            const engineData = await engineResponse.json();
+
+            setCar({...car, engine: engineData});
+            return;
+        }
+
+        setCar({ ...car, [name]: value})
+    };
+    const handleSubmit = async e => {
+        e.preventDefault();
+        const res = JSON.stringify(car)
+        console.log(res);
+
+        const resp = await fetch(ApiBasicUrl().concat('/car'), {
+            method: 'POST',
+            body: JSON.stringify(car),
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            }
+        });
+
+        const json = await resp.json();
+    }
     return(
         <Layout title="Car Creator">
             <div className="form-wrapper">
                 <div className="form-content">
                     <div className="form-section">
-                        {props.formMainSection.map((object) => <InputBox key={object.key} 
-                                                                        labelValue={object.labelValue} />)}
-                        <DropDown title="Select Engine" list={props.dropList} details={props.details} showDetails={true}/>
-                        <DropDown title="Select Gearbox" list={props.gearBox} showDetails={false} />
+                        {props.formMainSection.map((object) => <InputBox name={object.key} 
+                                                                        labelValue={object.labelValue} handleChange={handleChange}/>)}
+                        <DropDown title="Select Engine" list={props.dropList} details={props.details} showDetails={true} handleChange={handleChange} name="engine"/>
+                        <DropDown title="Select Gearbox" list={props.gearBox} showDetails={false} handleChange={handleChange} name="gearBox"/>
+                        <DropDown title="Select Category" list={props.category} showDetails={false} handleChange={handleChange} name="categoryId" />
                     </div>
                     <div className="form-section">
-                        {props.formOtherSection.map((object, index) => <InputBox key={object.key} 
-                                                                        labelValue={object.labelValue}/>)}
-                        <DropDown title="Select Drive Type" list={props.driveType} showDetails={false} />
-                        <DropDown title="Select Car Type" list={props.carType} showDetails={false} />
+                        {props.formOtherSection.map((object, index) => <InputBox name={object.key} 
+                                                                        labelValue={object.labelValue} handleChange={handleChange}/>)}
+                        <DropDown title="Select Drive Type" list={props.driveType} showDetails={false} handleChange={handleChange} name="driveType"/>
+                        <DropDown title="Select Car Type" list={props.carType} showDetails={false} handleChange={handleChange} name="type"/>
                     </div>
                 </div>
-                <button className="submit">Submit</button>
+                <button className="submit" onClick={handleSubmit}>Submit</button>
             </div>
         </Layout>
     )
 }
 
+//TODO REFACTOR
 CreateCar.getInitialProps = async () =>{
     const res = await fetch(ApiBasicUrl().concat('/engine'));
+    const catResp = await fetch(ApiBasicUrl().concat('/category'));
+
     const data = await res.json();
+    const catData = await catResp.json();
     
     const dropDownProvider = new Array();
     const detailsProvider = new Array();
+    const categoryDropDownProvider = new Array();
     const formValues = [
         {
             key: "vin",
             labelValue: "Vin"
         },
         {
-            key: "manuf",
+            key: "manufacturer",
             labelValue: "Manufacturer"
         },
         {
-            key: "mod",
+            key: "model",
             labelValue: "Model"
         },
         {
-            key: "mil",
+            key: "mileage",
             labelValue: "Mileage"
         }]
     const formOtherValues = [
@@ -58,21 +112,22 @@ CreateCar.getInitialProps = async () =>{
             labelValue: 'Color'
         },
         {
-            key: "country",
+            key: "originCountry",
             labelValue: 'Origin Country'
         },
         {
-            key: "amDoors",
+            key: "amountDoors",
             labelValue: "Amount Doors"
         },
         {
-            key: "amSeats",
+            key: "amountSeats",
             labelValue: "Amount Seats"
         }
     ]
     data.forEach(element => {
         const object = {
             id: element.id,
+            key: element.id,
             title: `Code: ${element.code}  ${element.horsePower} KM`
         }
 
@@ -107,6 +162,15 @@ CreateCar.getInitialProps = async () =>{
         detailsProvider.push(turboDetail);
     });
 
+    catData.forEach(element => {
+        const category = {
+            id: element.id,
+            key: element.id,
+            title: element.name
+        }
+
+        categoryDropDownProvider.push(category);
+    })
     const driveType = [
         {
             id: 0,
@@ -186,7 +250,8 @@ CreateCar.getInitialProps = async () =>{
         formOtherSection: formOtherValues,
         driveType: driveType,
         gearBox: gearBox,
-        carType: carType
+        carType: carType,
+        category: categoryDropDownProvider
     };
 };
 
