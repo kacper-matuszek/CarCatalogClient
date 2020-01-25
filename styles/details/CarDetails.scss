@@ -30,9 +30,11 @@
     /*border-left: 1px solid #a3092a;
     border-right: 1px solid #a3092a;
     border-bottom: 1px solid #a3092a;*/
-    background-image: url('/static/images/Mercedes_background.jpg');
-    background-size: cover;
-    background-position: top;
+    //background-image: url('/static/images/Mercedes_background.jpg');
+    //background-size: cover;
+    //background-position: top;
+    height: 100%;
+    background-color: darken($background, 15%);
 
     &::after{
         content: "";
@@ -41,7 +43,7 @@
         height: 100%;
         top: 0;
         left: 0;
-        background-color: rgba(0,0,0, .85);
+       // background-color: rgba(0,0,0, .85);
     }
 }
 .headerModel {
@@ -133,6 +135,7 @@
         font-size: 1.2em;
         font-weight: bold;
         padding: .3em;
+        color: darken($info-color, 60%)
     }
 
     > span {
@@ -140,6 +143,6 @@
         padding: .5em;
         text-align: center;
         vertical-align:middle;
-        color: darken($info-color, 15%);
+        color: $pure-black;
     }
 }

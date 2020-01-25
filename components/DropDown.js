@@ -13,7 +13,7 @@ class DropDown extends React.Component {
             headerTitle: this.props.title,
             allDetails: this.props.details,
             details: new Array(),
-            renderMessage: false,
+            renderMessage: false
         }
     }
 
@@ -36,12 +36,17 @@ class DropDown extends React.Component {
     selectedItem(name) {
         this.setState({
             headerTitle: name,
+            renderMessage: false
         });
 
         this.handleClickOutSide();
     }
 
     onBeforeRenderMessage(id) {
+
+        if(this.state.allDetails === undefined)
+        {  return; }
+
         this.setState({
             details: this.state.allDetails.filter(x => x.id == id)
         })
@@ -51,8 +56,8 @@ class DropDown extends React.Component {
     }
 
     render() {
-        const{list} = this.props;
-        const{listOpen, headerTitle, renderMessage, renderClassMess} = this.state;
+        const{list, showDetails} = this.props;
+        const{listOpen, headerTitle, renderMessage} = this.state;
 
         return(
         <div className="dd-wrapper">
@@ -71,7 +76,7 @@ class DropDown extends React.Component {
                         >{item.title}</li>
                 ))}
             </ul>}
-            {renderMessage && 
+            {renderMessage && showDetails &&
                 <MessageOnHover /*onRef={ref => (this.child = ref)} delay={500}*/ content={this.state.details} />   
             }
         </div>)

@@ -13,11 +13,14 @@ const CreateCar = (props) => {
                     <div className="form-section">
                         {props.formMainSection.map((object) => <InputBox key={object.key} 
                                                                         labelValue={object.labelValue} />)}
-                    <DropDown title="Select Engine" list={props.dropList} details={props.details}/>
+                        <DropDown title="Select Engine" list={props.dropList} details={props.details} showDetails={true}/>
+                        <DropDown title="Select Gearbox" list={props.gearBox} showDetails={false} />
                     </div>
                     <div className="form-section">
                         {props.formOtherSection.map((object, index) => <InputBox key={object.key} 
                                                                         labelValue={object.labelValue}/>)}
+                        <DropDown title="Select Drive Type" list={props.driveType} showDetails={false} />
+                        <DropDown title="Select Car Type" list={props.carType} showDetails={false} />
                     </div>
                 </div>
                 <button className="submit">Submit</button>
@@ -48,19 +51,11 @@ CreateCar.getInitialProps = async () =>{
         {
             key: "mil",
             labelValue: "Mileage"
-        },
-        {
-            key: "driv",
-            labelValue: "Drive Type"
         }]
     const formOtherValues = [
         {
             key: 'color',
             labelValue: 'Color'
-        },
-        {
-            key: 'type',
-            labelValue: 'Type'
         },
         {
             key: "country",
@@ -112,11 +107,86 @@ CreateCar.getInitialProps = async () =>{
         detailsProvider.push(turboDetail);
     });
 
+    const driveType = [
+        {
+            id: 0,
+            key: "FrontWheel",
+            title: "Front Wheel"
+        },
+        {
+            id: 1,
+            key: "RearWheel",
+            title: "Rear Wheel"
+        },
+        {
+            id: 2,
+            key: "AllWheel",
+            title: "All Wheel"
+        },
+        {
+            id: 3,
+            key: "FourWheel",
+            title: "Four Wheel"
+        }
+    ]
+    const gearBox = [
+        {
+            id: 0,
+            key: "Manual",
+            title: "Manual"
+        },
+        {
+            id: 1,
+            key: "Automatic",
+            title: "Automatic"
+        },
+        {
+            id: 2,
+            key: "SemiAutomatic",
+            title: "Semi Automatic"
+        },
+        {
+            id: 3,
+            key: "Stepless",
+            title: "Stepless"
+        },
+    ]
+
+    const carType = [
+        {
+            id: 0,
+            key: "Hatchback",
+            title: "Hatchback"
+        },
+        {
+            id: 1,
+            key: "Sedan",
+            title: "Sedan"
+        },
+        {
+            id: 2,
+            key: "Combi",
+            title: "Combi"
+        },
+        {
+            id: 3,
+            key: "SUV",
+            title: "Cabriolet"
+        },
+        {
+            id: 4,
+            key: "Coupe",
+            title: "Coupe"
+        }
+    ]
     return{
         dropList: dropDownProvider,
         details: detailsProvider,
         formMainSection: formValues,
-        formOtherSection: formOtherValues
+        formOtherSection: formOtherValues,
+        driveType: driveType,
+        gearBox: gearBox,
+        carType: carType
     };
 };
 

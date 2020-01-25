@@ -4,7 +4,7 @@
     position: relative;
     display: inline-block;
     width: 200px;
-    margin: .2em;
+    margin: .5em;
     box-shadow: 0 9px 15px rgba(0, 0, 0, .1);
 
 
@@ -17,6 +17,7 @@
         align-items: center;
         justify-content: stretch;
         border-bottom: 2px solid $primary;
+        background-color: aliceblue;
         cursor: pointer;
 
         > .dd-header-title {

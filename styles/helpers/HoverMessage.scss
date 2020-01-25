@@ -3,18 +3,20 @@
 .wrapper {
     position: absolute;
     transition: .5s ease;
-    opacity: 1;
+   // opacity: 1;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     width: 100%;
     padding: .5em;
     left: 105%;
     margin: .3em;
     background-color: $background;
+    border-radius: 5px;
 
     > .message {
         position: relative;
         display: flex;
         flex-flow: column;
+        background: $background;
 
         > .content {
             position: relative;
@@ -24,6 +26,7 @@
             align-items: stretch;
             margin: .1em;
             padding: .1em;
+            background-color: $background;
         }
     }
 }
